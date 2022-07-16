@@ -1,0 +1,241 @@
+/* Start Variables */
+:root {
+    /* Primary Colors */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    /* Neutral Colors */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: 'Fraunces', serif;
+    font-family: 'Montserrat', sans-serif; */
+    background-color: var(--cream);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content {
+    display: flex;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: var(--white);
+    margin: 0 185px;
+    max-width: 572px;
+}
+
+@media (max-width:600px) {
+    .container .content {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+}
+
+.content img {
+    max-width: 280px;
+    border-radius: 10px 0 0 10px;
+}
+
+@media (max-width:600px) {
+    .content img {
+        border-radius: 10px 10px 0 0;
+        max-width: 283px;
+    }
+}
+
+@media (max-width:600px) {
+    .content .info .contain {
+        margin-left: 25px;
+    }
+}
+
+.content .info .title {
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--dark-grayish-blue);
+}
+
+.content .info h2 {
+    max-width: 70%;
+    color: var(--very-dark-blue);
+    margin-bottom: 20px;
+    font-family: 'Fraunces', serif;
+}
+
+@media (max-width:600px) {
+    .content .info h2 {
+        max-width: 85%;
+    }
+}
+
+.content .info .text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--dark-grayish-blue);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.content .info .price {
+    margin: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width:600px) {
+    .content .info .price {
+        margin: 40px 0 10px 0;
+    }
+}
+
+.content .info .price .current {
+    font-family: 'Fraunces', serif;
+    color: var(--dark-cyan);
+    font-size: 35px;
+}
+
+.content .info .price .previous {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-grayish-blue);
+    font-size: 13px;
+    margin-right: 40px;
+}
+
+.content .info a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-cyan);
+    padding: 15px;
+    width: 85%;
+    text-decoration: none;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cream);
+    font-size: 15px;
+    border-radius: 10px;
+    transition: background-color .5s;
+}
+
+@media (max-width:600px) {
+    .content .info a {
+        margin-bottom: 20px;
+    }
+}
+
+.content .info a:hover {
+    background-color: hsl(158deg 30% 26%);
+}
+
+/* Start Attribution */
+.attribution {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width:573px) {
+    .attribution {
+        gap: 40px;
+    }
+}
+
+.attribution>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--dark-cyan);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.attribution>div>a {
+    text-decoration: none;
+    color: var(--dark-cyan);
+    display: block;
+    border: 1px solid var(--very-dark-blue);
+    padding: 10px 20px;
+    transition: color .5s;
+    border-radius: 6px;
+    position: relative;
+}
+
+.attribution>div>a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 102%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-cyan);
+    z-index: -1;
+    border-radius: 6px;
+    transition: width .5s;
+}
+
+.attribution>div>a:hover {
+    color: var(--cream);
+    border-color: var(--dark-cyan);
+}
+
+.attribution>div>a:hover::before {
+    width: 101%;
+}
+
+/* End Attribution */
